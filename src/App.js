@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="pokedex">
-        <h1 className="pokedex__title">Welcome to React</h1>
+        <h1 className="pokedex__title">Gotta Catch'em All</h1>
         <Search />
       </div>
     );
