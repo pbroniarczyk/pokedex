@@ -1,0 +1,41 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #0000004f;
+}
+
+.modal__content {
+    width: 70%;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
+    box-shadow: 1px 1px 8px 2px #0000006e;
+}
+
+.modal__close {
+    position: absolute;
+    right: -55px;
+    top: -10px;
+    width: 50px;
+    height: auto;
+    background-color: transparent;
+    border: none;
+}
+
+.close__icon {
+    width: 50px;
+    height: auto;
+    fill: #0000004d;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.close__icon:hover {
+    fill: #00000099;
+}

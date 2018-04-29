@@ -20,21 +20,16 @@ class Card extends Component {
     }
 
     render() {
-        console.log("DID MOUNT", this.props)
-        if (this.props.isOpen) {
-            return (
-                <div className="card__item">
-                    <a
-                        href="#"
-                        className="card__close"
-                        onClick={this.props.handleCloseCard}
-                    >CLOSE</a>
-                    <h2 className="card__title">{this.props.pokemon}</h2>
-                </div>
-            );
-        } else {
-            return "DUPA";
-        }
+        return (
+            <div className="card__item">
+                <a
+                    href="#"
+                    className="card__close"
+                    onClick={this.props.handleCloseCard}
+                >CLOSE</a>
+                <h2 className="card__title">{this.props.pokemon}</h2>
+            </div>
+        );
     }
 }
 

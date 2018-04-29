@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // Components
 import Search from "./components/search/Search.jsx";
 import PokeList from "./components/pokeList/PokeList.jsx";
-import Card from "./components/card/Card.jsx";
+import Modal from "./components/modal/Modal.jsx";
 
 class App extends Component {
   constructor() {
@@ -34,7 +34,7 @@ class App extends Component {
         <h1 className="pokedex__title">Gotta Catch'em All</h1>
         <Search />
         <PokeList handleOpenCard={this.handleOpenCard} />
-        <Card
+        <Modal
           isOpen={this.state.cardIsOpen}
           pokemon={this.state.pokemon}
           handleCloseCard={this.handleCloseCard}  
