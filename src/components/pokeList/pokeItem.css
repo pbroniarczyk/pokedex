@@ -1,0 +1,18 @@
+.poke-list__item {
+    width: 130px;
+    text-align: center;
+    transition: var(--transition);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+.poke-list__item:hover {
+    box-shadow: 0px 0px 5px 1px #00000085;
+    cursor: pointer;
+}
+
+.poke-list__sprite {
+    max-width: 80px;
+    margin: 0 auto 10px;
+}

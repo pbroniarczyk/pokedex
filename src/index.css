@@ -9,11 +9,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .pokedex__title {
   text-align: center;
 }
 
-/* ========= SEARCH ========= */
-.search {
-  text-align: center;
+
+/* ========== VARIABLES ========== */
+:root {
+  --transition: 0.3s ease-in-out;
 }
