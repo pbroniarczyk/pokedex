@@ -23,7 +23,10 @@ class PokeList extends Component {
 
     render() {
         return (
-            <div className="poke-list__item">
+            <div
+                className="poke-list__item"
+                onClick={() => { this.props.handleOpenCard(this.props.name) }}
+            >
                 <img
                     className="poke-list__sprite"
                     src={images[`${zerosAmount + this.props.index}.png`]}

@@ -1,0 +1,8 @@
+.card__item {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    width: 100%;
+    bottom: 0;
+}

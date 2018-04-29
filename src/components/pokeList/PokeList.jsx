@@ -28,7 +28,13 @@ class PokeList extends Component {
             <React.Fragment>
                 <h1>POKE LIST</h1>
                 <section className="pokelist">
-                    {this.state.pokeList.map((e,i) => <PokeItem name={e.name} index={i + 1} key={e.name}/>)}
+                    {this.state.pokeList.map((e,i) => 
+                        <PokeItem
+                            key={e.name}
+                            name={e.name}
+                            index={i + 1}
+                            handleOpenCard={this.props.handleOpenCard}
+                        />)}
                 </section>
             </React.Fragment>
         );
