@@ -5,4 +5,21 @@
     background: #FFFFFF;
     width: 100%;
     bottom: 0;
+    overflow: hidden;
 }
+
+.card__section {
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #0000001f;
+}
+
+card__avatar {
+    padding-top: 50px;
+}
+
+.card__title { 
+    margin-top: 0;
+    text-align: center;
+}
+

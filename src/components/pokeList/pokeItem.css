@@ -1,4 +1,4 @@
-.poke-list__item {
+.pokelist__item {
     width: 130px;
     text-align: center;
     transition: var(--transition);
@@ -7,12 +7,12 @@
     padding-bottom: 5px;
     box-sizing: border-box;
 }
-.poke-list__item:hover {
+.pokelist__item:hover {
     box-shadow: 0px 0px 5px 1px #00000085;
     cursor: pointer;
 }
 
-.poke-list__sprite {
+.pokelist__sprite {
     max-width: 80px;
     margin: 0 auto 10px;
 }
