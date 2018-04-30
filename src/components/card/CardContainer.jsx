@@ -3,6 +3,8 @@ import axios from "axios";
 
 // Components
 import Loader from "../loader/Loader.jsx";
+import CardAvatar from "./CardAvatart.jsx";
+import CardDescription from "./CardDescription.jsx";
 
 // Assets
 import "./card.css"
@@ -10,7 +12,7 @@ import "./card.css"
 let pokemon = {};
 
 
-class Card extends Component {
+class CardContainer extends Component {
     constructor() {
         super();
         this.state = {
@@ -33,13 +35,8 @@ class Card extends Component {
         if (this.state.isLoaded) {
             return (
                 <div className="card__item">
-                    <section className="card__section card__avatar">
-                        <h2 className="card__title">{pokemon.name}</h2>
-                        <div className="card__avatar"><img src={pokemon.sprites.front_default} alt={pokemon.name}/></div>
-                    </section>
-                    <section className="card__section card__desc">
-                    
-                    </section>
+                    <CardAvatar pokemon={pokemon} />
+                    <CardDescription pokemon={pokemon} />
                 </div>
             );
         } else {
@@ -48,4 +45,4 @@ class Card extends Component {
     }
 }
 
-export default Card
+export default CardContainer

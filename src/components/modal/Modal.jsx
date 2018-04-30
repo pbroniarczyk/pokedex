@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "../card/Card.jsx";
+import CardContainer from "../card/CardContainer.jsx";
 
 // Assets
 import "./modal.css";
@@ -16,7 +16,7 @@ class Modal extends Component {
             return (
                 <div className="modal">
                     <div className="modal__content">
-                        <Card pokemon={this.props.pokemon} />
+                        <CardContainer pokemon={this.props.pokemon} />
                         <button
                             className="modal__close"
                             onClick={this.props.handleCloseCard}
