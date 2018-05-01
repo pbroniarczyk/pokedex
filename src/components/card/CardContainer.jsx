@@ -5,6 +5,7 @@ import axios from "axios";
 import Loader from "../loader/Loader.jsx";
 import CardAvatar from "./CardAvatart.jsx";
 import CardDescription from "./CardDescription.jsx";
+import CardMoves from "./CardMoves.jsx";
 
 // Assets
 import "./card.css"
@@ -17,15 +18,26 @@ class CardContainer extends Component {
         super();
         this.state = {
             pokemon: {},
-            isLoaded: false
+            isLoaded: false,
+            movesPulled: false
         }
+
+        this.toggleMovesList = this.toggleMovesList.bind(this);
+    }
+
+    toggleMovesList() {
+        this.setState((prevState, props) => ({
+            movesPulled: !prevState.movesPulled
+        }));
     }
     
     componentWillMount() {
         axios.get(`http://pokeapi.salestock.net/api/v2/pokemon/${this.props.pokemon}`)
         .then(response => {
             pokemon = response.data;
-            this.setState({ isLoaded: true })
+            this.setState((prevState, props) => ({
+                isLoaded: !prevState.isLoaded
+            }));
         })
         .catch(error => { throw(error) })
     }
@@ -35,7 +47,15 @@ class CardContainer extends Component {
             return (
                 <div className="card__item">
                     <CardAvatar pokemon={pokemon} />
-                    <CardDescription pokemon={pokemon} />
+                    <CardDescription
+                        pokemon={pokemon}
+                        toggleMovesList={this.toggleMovesList}
+                    />
+                    <CardMoves
+                        moves={pokemon.moves}
+                        movesPulled={this.state.movesPulled}
+                        toggleMovesList={this.toggleMovesList}
+                    />
                 </div>
             );
         } else {

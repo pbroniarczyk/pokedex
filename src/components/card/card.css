@@ -15,6 +15,40 @@
     border-right: 1px solid #0000001f;
     padding: 30px 10px;
     box-sizing: border-box;
+    transition: var(--transition);
+}
+
+.desc__section {
+    background-color: #a8a8772e;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 9px;
+}
+
+.desc__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.desc__wrapper--reverse {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.section__link {
+    width: 36px;
+    height: 26px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    outline-color: transparent;
+}
+
+.section__link--back {
+    margin-right: 10px;
 }
 
 
@@ -30,12 +64,21 @@ card__avatar {
     text-transform: capitalize;
 }
 
+.card__subtitle {
+    margin: 0;
+    line-height: 32px;
+}
+
 .type {
     padding: 5px 10px;
     border-radius: 50px;
     margin-right: 5px;
     background-color: #a8a877;
     color: #FFFFFF;
+}
+
+.type:last-child {
+    margin-right: 20px;
 }
 
 .type--normal { background-color: #a8a877; }
@@ -56,7 +99,7 @@ card__avatar {
 
 .card__basic {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .basic__number {
@@ -72,8 +115,34 @@ card__avatar {
 
 .stat__name {
     width: 49%;
+    line-height: 27px;
 }
 
 .stat__value {
     margin-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* ====== MOVES ====== */
+.card__moves {
+    position: absolute;
+    right: -100%;
+    background-color: #FFFFFF;
+}
+
+.card__moves--pulled {
+    right: 0%;
+}
+
+.card__moves-list {
+    height: 100%;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.item--expanded {
+    background-color: red;
 }
