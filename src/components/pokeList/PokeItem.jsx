@@ -14,14 +14,11 @@ const images = importAllSprites(require.context('../../assets/img/sprites', fals
 let zerosAmount;
 
 class PokeList extends Component {
-    
-    componentWillMount() {
+    render() {
         if(this.props.index < 10) zerosAmount = "00";
         if(this.props.index >= 10 && this.props.index < 100) zerosAmount = "0";
         if(this.props.index >= 100) zerosAmount = "";
-    }
-
-    render() {
+        
         return (
             <div
                 className="pokelist__item"

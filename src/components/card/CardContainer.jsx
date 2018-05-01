@@ -31,7 +31,6 @@ class CardContainer extends Component {
     }
 
     render() {
-        console.log("POOOOKE", pokemon)
         if (this.state.isLoaded) {
             return (
                 <div className="card__item">
