@@ -23,7 +23,7 @@ class CardMoves extends Component {
             moveDetails: {}
         }
      
-        this.expandMove = this.expandMove.bind(this);
+        // this.expandMove = this.expandMove.bind(this);
     }
 
     fetchMoveData(url) {
@@ -34,11 +34,16 @@ class CardMoves extends Component {
     }
 
     expandMove(e, currentMoveObject, index) {
-        console.log("ExpandMore function ----------- ", currentMoveObject)
+        console.log("ExpandMore function ----------- ", e.target, currentMoveObject, index);
         let parent = e.target.parentNode;
-        parent.classList.contains("item--expanded")
-            ? parent.classList.remove("item--expanded")
-            : parent.classList.add("item--expanded")
+
+        if (parent.classList.contains("item--expanded")) {
+            parent.classList.remove("item--expanded");
+            this.setState((prevState) => ({ expanded: !prevState.expanded }))
+        } else {
+            parent.classList.add("item--expanded");
+            this.setState((prevState) => ({ expanded: !prevState.expanded }))
+        }
 
         this.fetchMoveData(currentMoveObject.url)
     }
@@ -70,8 +75,8 @@ class CardMoves extends Component {
                     {
                         this.props.moves.map((element, index) => 
                             <MoveItem
-                                expanded={this.state.expanded}
-                                expandMove={this.expandMove}
+                                // expanded={this.state.expanded}
+                                expandMove={this.expandMove.bind(this)}
                                 key={element.move.name}
                                 move={element.move}
                                 index={index}

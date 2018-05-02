@@ -44,7 +44,6 @@
     border: none;
     cursor: pointer;
     transition: var(--transition);
-    outline-color: transparent;
 }
 
 .section__link--back {
@@ -96,6 +95,7 @@ card__avatar {
 .type--psyhic { background-color: #f25788; }
 .type--ice { background-color: #98d9d8; }
 .type--dragon { background-color: #786df8; }
+.type--fairy { background-color: #f376a9; }
 
 .card__basic {
     display: flex;
@@ -143,6 +143,10 @@ card__avatar {
     padding-bottom: 20px;
 }
 
-.item--expanded {
-    background-color: red;
+.item__title {
+    cursor: pointer;
 }
+
+/* .item--expanded {
+    background-color: red;
+} */
