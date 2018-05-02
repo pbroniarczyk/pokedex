@@ -5,10 +5,6 @@ import "./card.css"
 
 
 class MoveItem extends Component {
-    constructor() {
-        super();
-    }
-
     render() {
         console.log("RENDER DETAILS", this.props.moveDetails)
         return(

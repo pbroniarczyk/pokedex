@@ -47,7 +47,7 @@ class CardMoves extends Component {
         let moveArray = [];
         this.props.moves.forEach(element => {
             let move = {};
-            move.name = element.move.name,
+            move.name = element.move.name;
             move.expanded = false
             moveArray.push(move);
         });

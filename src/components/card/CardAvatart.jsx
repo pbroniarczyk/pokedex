@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 // Assets
 import "./card.css"
 
 
 class CardContainer extends Component {
-    constructor() {
-        super();
+    // constructor() {
+    //     super();
         
-    }
+    // }
 
     // componentWillMount() {
     //     console.log("EVOLUTION CHAIN", this.props.pokemon.id)
