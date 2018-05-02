@@ -22,8 +22,6 @@ class CardMoves extends Component {
             moveArray: [],
             moveDetails: {}
         }
-     
-        // this.expandMove = this.expandMove.bind(this);
     }
 
     fetchMoveData(url) {
@@ -34,7 +32,6 @@ class CardMoves extends Component {
     }
 
     expandMove(e, currentMoveObject, index) {
-        console.log("ExpandMore function ----------- ", e.target, currentMoveObject, index);
         let parent = e.target.parentNode;
 
         if (parent.classList.contains("item--expanded")) {
@@ -75,7 +72,6 @@ class CardMoves extends Component {
                     {
                         this.props.moves.map((element, index) => 
                             <MoveItem
-                                // expanded={this.state.expanded}
                                 expandMove={this.expandMove.bind(this)}
                                 key={element.move.name}
                                 move={element.move}

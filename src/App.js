@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div className="pokedex">
         <h1 className="pokedex__title">Gotta Catch'em All</h1>
-        <Search />
+        {/* <Search /> */}
         <PokeList handleOpenCard={this.handleOpenCard} />
         <Modal
           isOpen={this.state.cardIsOpen}
