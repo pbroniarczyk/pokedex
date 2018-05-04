@@ -59,12 +59,12 @@ class CardMoves extends Component {
 
     render() {
         return(
-            <section className={`card__section card__moves card__desc ${this.props.movesPulled ? "card__moves--pulled" : null}`}>
+            <section className={`card__section card__moves card__desc ${this.props.sectionPulled ? "card__moves--pulled" : null}`}>
                 <div className="desc__wrapper desc__wrapper--reverse">
                     <h3 className="card__subtitle">Moves</h3>
                     <button
                         className="section__link section__link--back"
-                        onClick={this.props.toggleMovesList}
+                        onClick={this.props.toggleSectionsList}
                     >{ICON}
                     </button>
                 </div>

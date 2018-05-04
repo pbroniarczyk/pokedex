@@ -9,13 +9,13 @@
 
 .modal__content {
     width: 70%;
-    background-color: #FFFFFF;
+    height: 50%;
     margin: 0 auto;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    height: 70%;
     box-shadow: 1px 1px 8px 2px #0000006e;
+    background-color: #FFFFFF;
 }
 
 .modal__close {

@@ -6,6 +6,7 @@ import Loader from "../loader/Loader.jsx";
 import CardAvatar from "./CardAvatart.jsx";
 import CardDescription from "./CardDescription.jsx";
 import CardMoves from "./CardMoves.jsx";
+import CardLocations from "./CardLocations.jsx";
 
 // Assets
 import "./card.css"
@@ -19,15 +20,15 @@ class CardContainer extends Component {
         this.state = {
             pokemon: {},
             isLoaded: false,
-            movesPulled: false
+            sectionsPulled: false
         }
 
-        this.toggleMovesList = this.toggleMovesList.bind(this);
+        this.toggleSectionsList = this.toggleSectionsList.bind(this);
     }
 
-    toggleMovesList() {
+    toggleSectionsList() {
         this.setState((prevState, props) => ({
-            movesPulled: !prevState.movesPulled
+            sectionsPulled: !prevState.sectionsPulled
         }));
     }
     
@@ -49,12 +50,18 @@ class CardContainer extends Component {
                     <CardAvatar pokemon={pokemon} />
                     <CardDescription
                         pokemon={pokemon}
-                        toggleMovesList={this.toggleMovesList}
+                        toggleSectionsList={this.toggleSectionsList}
                     />
                     <CardMoves
                         moves={pokemon.moves}
-                        movesPulled={this.state.movesPulled}
-                        toggleMovesList={this.toggleMovesList}
+                        sectionsPulled={this.state.sectionsPulled}
+                        toggleSectionsList={this.toggleSectionsList}
+                    />
+                    <CardLocations
+                        pokemon={pokemon}
+                        moves={pokemon.moves}
+                        sectionsPulled={this.state.sectionsPulled}
+                        toggleSectionsList={this.toggleSectionsList}
                     />
                 </div>
             );

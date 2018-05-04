@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
-import Search from "./components/search/Search.jsx";
+// import Search from "./components/search/Search.jsx";
 import PokeList from "./components/pokeList/PokeList.jsx";
 import Modal from "./components/modal/Modal.jsx";
 

@@ -39,7 +39,15 @@ class CardContainer extends Component {
                     <h3 className="card__subtitle">Moves</h3>
                     <button
                         className="section__link"
-                        onClick={this.props.toggleMovesList}
+                        onClick={this.props.toggleSectionList}
+                    >{ICON}
+                    </button>
+                </div>
+                <div className="desc__section desc__wrapper">
+                    <h3 className="card__subtitle">Locations</h3>
+                    <button
+                        className="section__link"
+                        onClick={this.props.toggleSectionList}
                     >{ICON}
                     </button>
                 </div>

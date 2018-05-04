@@ -55,6 +55,8 @@
 /* ====== AVATAR ====== */
 card__avatar {
     padding-top: 50px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .card__title { 
@@ -143,10 +145,40 @@ card__avatar {
     padding-bottom: 20px;
 }
 
+.card__wrapper--reverse {
+    border-bottom: 1px solid gray;
+}
+
 .item__title {
     cursor: pointer;
 }
 
-/* .item--expanded {
-    background-color: red;
-} */
+
+/* ====== LOCATIONS ====== */
+.locations-list__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item__version {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.version__title {
+    padding-bottom: 5px;
+}
+
+.version__orb {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.version__orb--red { background-color: red; }
+.version__orb--blue { background-color: blue; }
+.version__orb--yellow { background-color: yellow; }
