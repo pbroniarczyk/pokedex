@@ -47,7 +47,6 @@ class CardLocations extends Component {
     }
 
     render() {
-        console.log("RENDER LOCATIONS ==== ", this.props)
         return(
             <section className={`card__section card__panel card__desc ${this.props.sectionPulled ? "card__panel--pulled" : null}`}>
                 <div className="desc__wrapper desc__wrapper--reverse">

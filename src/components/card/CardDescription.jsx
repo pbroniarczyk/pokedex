@@ -11,7 +11,6 @@ const ICON = <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmln
 
 class CardContainer extends Component {
     render() {
-        console.log("RENDER DESC", this.props);
         return(
             <section className="card__section card__desc">
                 <div className="desc__wrapper">

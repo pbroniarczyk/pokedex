@@ -28,8 +28,7 @@ class CardContainer extends Component {
     }
 
     toggleSectionList(panel) {
-        console.log("event", panel);
-        this.setState((prevState, props) => (console.log("TOGGLE SECTIONS === ", panel, prevState), {
+        this.setState((prevState, props) => ({
             [panel]: !prevState[panel]
         }));
     }
