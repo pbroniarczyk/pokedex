@@ -10,11 +10,26 @@ const ICON = <svg fill="#FFFFFF" className="close__icon" height="24" viewBox="0 
     </svg>
 
 
+
 class Modal extends Component {
+    constructor() {
+        super();
+        this.closeModalOutside = this.closeModalOutside.bind(this);
+    }
+    
+    closeModalOutside(e, modalID) {
+        const ID = e.target.getAttribute("id");  
+        if(ID === modalID) this.props.handleCloseCard();
+    }
+    
     render() {
         if (this.props.isOpen) {
             return (
-                <div className="modal">
+                <div
+                    id="modal"
+                    className="modal"
+                    onClick={(e) => { this.closeModalOutside(e, "modal") }}
+                >
                     <div className="modal__content">
                         <CardContainer pokemon={this.props.pokemon} />
                         <button

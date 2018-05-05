@@ -34,8 +34,8 @@ class CardLocations extends Component {
             element.version_details.map((ver) => {
                 if(
                     ver.version.name === "red" ||
-                    ver.version.name === "blue" ||
-                    ver.version.name === "yellow" &&
+                    ver.version.name === "blue" &&
+                    // ver.version.name === "yellow" &&
                     !LOCATION_LIST.includes(element)
                 ) {
                     LOCATION_LIST.push(element)
