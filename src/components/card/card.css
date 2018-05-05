@@ -26,6 +26,23 @@
     margin-bottom: 9px;
 }
 
+.card__panel {
+    position: absolute;
+    right: -100%;
+    background-color: #FFFFFF;
+}
+
+.card__panel--pulled {
+    right: 0%;
+}
+
+.card__panel-list {
+    height: 100%;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
 .desc__wrapper {
     display: flex;
     justify-content: space-between;
@@ -128,23 +145,6 @@ card__avatar {
 
 
 /* ====== MOVES ====== */
-.card__moves {
-    position: absolute;
-    right: -100%;
-    background-color: #FFFFFF;
-}
-
-.card__moves--pulled {
-    right: 0%;
-}
-
-.card__moves-list {
-    height: 100%;
-    overflow-y: scroll;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-}
-
 .card__wrapper--reverse {
     border-bottom: 1px solid gray;
 }

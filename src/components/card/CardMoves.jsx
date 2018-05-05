@@ -58,17 +58,18 @@ class CardMoves extends Component {
     }
 
     render() {
+        console.log("RENDER MOVES ==== ", this.props)
         return(
-            <section className={`card__section card__moves card__desc ${this.props.sectionPulled ? "card__moves--pulled" : null}`}>
+            <section className={`card__section card__panel card__desc ${this.props.sectionPulled ? "card__panel--pulled" : null}`}>
                 <div className="desc__wrapper desc__wrapper--reverse">
                     <h3 className="card__subtitle">Moves</h3>
                     <button
                         className="section__link section__link--back"
-                        onClick={this.props.toggleSectionsList}
+                        onClick={() => { this.props.toggleSectionList("sectionMovesPulled") }}
                     >{ICON}
                     </button>
                 </div>
-                <div className="card__moves-list">
+                <div className="card__panel-list">
                     {
                         this.props.moves.map((element, index) => 
                             <MoveItem

@@ -22,7 +22,6 @@ class LocationItem extends Component {
                                 if(element.version.name === "red") { return <span key={index} className="version__orb version__orb--red"></span>;}
                                 if(element.version.name === "blue") { return <span key={index} className="version__orb version__orb--blue"></span>;}
                                 if(element.version.name === "yellow") { return <span key={index} className="version__orb version__orb--yellow"></span>;}
-                                return;
                             }) 
                         }
                     </div>

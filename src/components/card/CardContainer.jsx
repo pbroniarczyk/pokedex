@@ -20,15 +20,17 @@ class CardContainer extends Component {
         this.state = {
             pokemon: {},
             isLoaded: false,
-            sectionsPulled: false
+            sectionMovesPulled: false,
+            sectionLocationsPulled: false
         }
 
-        this.toggleSectionsList = this.toggleSectionsList.bind(this);
+        this.toggleSectionList = this.toggleSectionList.bind(this);
     }
 
-    toggleSectionsList() {
-        this.setState((prevState, props) => ({
-            sectionsPulled: !prevState.sectionsPulled
+    toggleSectionList(panel) {
+        console.log("event", panel);
+        this.setState((prevState, props) => (console.log("TOGGLE SECTIONS === ", panel, prevState), {
+            [panel]: !prevState[panel]
         }));
     }
     
@@ -50,18 +52,18 @@ class CardContainer extends Component {
                     <CardAvatar pokemon={pokemon} />
                     <CardDescription
                         pokemon={pokemon}
-                        toggleSectionsList={this.toggleSectionsList}
+                        toggleSectionList={this.toggleSectionList}
                     />
                     <CardMoves
                         moves={pokemon.moves}
-                        sectionsPulled={this.state.sectionsPulled}
-                        toggleSectionsList={this.toggleSectionsList}
+                        sectionPulled={this.state.sectionMovesPulled}
+                        toggleSectionList={this.toggleSectionList}
                     />
                     <CardLocations
                         pokemon={pokemon}
                         moves={pokemon.moves}
-                        sectionsPulled={this.state.sectionsPulled}
-                        toggleSectionsList={this.toggleSectionsList}
+                        sectionPulled={this.state.sectionLocationsPulled}
+                        toggleSectionList={this.toggleSectionList}
                     />
                 </div>
             );

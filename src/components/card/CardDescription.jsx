@@ -11,6 +11,7 @@ const ICON = <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmln
 
 class CardContainer extends Component {
     render() {
+        console.log("RENDER DESC", this.props);
         return(
             <section className="card__section card__desc">
                 <div className="desc__wrapper">
@@ -39,7 +40,7 @@ class CardContainer extends Component {
                     <h3 className="card__subtitle">Moves</h3>
                     <button
                         className="section__link"
-                        onClick={this.props.toggleSectionList}
+                        onClick={() => { this.props.toggleSectionList("sectionMovesPulled") }}
                     >{ICON}
                     </button>
                 </div>
@@ -47,7 +48,7 @@ class CardContainer extends Component {
                     <h3 className="card__subtitle">Locations</h3>
                     <button
                         className="section__link"
-                        onClick={this.props.toggleSectionList}
+                        onClick={() => { this.props.toggleSectionList("sectionLocationsPulled") }}
                     >{ICON}
                     </button>
                 </div>

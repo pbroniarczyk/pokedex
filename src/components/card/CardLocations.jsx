@@ -47,17 +47,18 @@ class CardLocations extends Component {
     }
 
     render() {
+        console.log("RENDER LOCATIONS ==== ", this.props)
         return(
-            <section className={`card__section card__locations card__desc ${this.props.sectionPulled ? "card__locations--pulled" : null}`}>
+            <section className={`card__section card__panel card__desc ${this.props.sectionPulled ? "card__panel--pulled" : null}`}>
                 <div className="desc__wrapper desc__wrapper--reverse">
                     <h3 className="card__subtitle">Locations</h3>
                     <button
                         className="section__link section__link--back"
-                        onClick={this.props.toggleSectionsList}
+                        onClick={() => { this.props.toggleSectionList("sectionLocationsPulled") }}
                     >{ICON}
                     </button>
                 </div>
-                <div className="card__moves-list card__locations-list">
+                <div className="card__moves-list card__panel-list">
                     {
                         this.state.locationList.map((element, index) => 
                             <LocationItem
