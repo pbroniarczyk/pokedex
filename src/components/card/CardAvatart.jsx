@@ -13,7 +13,7 @@ class CardContainer extends Component {
 
     // componentWillMount() {
     //     console.log("EVOLUTION CHAIN", this.props.pokemon.id)
-    //     axios.get(`http://pokeapi.salestock.net/api/v2/evolution-chain/${this.props.pokemon.id}/`)
+    //     axios.get(`https://pokeapi.salestock.net/api/v2/evolution-chain/${this.props.pokemon.id}/`)
     //     .then(response => { console.log(response.data) })
     //     .catch(error => { throw(error) })
     // }

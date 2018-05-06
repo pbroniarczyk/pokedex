@@ -34,7 +34,7 @@ class CardContainer extends Component {
     }
     
     componentWillMount() {
-        axios.get(`http://pokeapi.salestock.net/api/v2/pokemon/${this.props.pokemon}`)
+        axios.get(`https://pokeapi.salestock.net/api/v2/pokemon/${this.props.pokemon}`)
         .then(response => {
             pokemon = response.data;
             this.setState((prevState, props) => ({
