@@ -19,7 +19,7 @@ class PokeList extends Component {
     }
     
     componentWillMount() {
-        axios.get("https://pokeapi.co/api/v2/pokemon/?limit=121")
+        axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151")
         .then(response => {
             this.setState({
                 pokeList: response.data.results,
