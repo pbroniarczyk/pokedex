@@ -2,6 +2,7 @@
   "name": "pokedex",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pbroniarczyk.github.io/pokedex",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
