@@ -22,7 +22,7 @@ class CardLocations extends Component {
     }
 
     componentDidMount() {
-        axios.get(`https://pokeapi.salestock.net/api/v2/pokemon/${this.props.pokemon.id}/encounters`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemon.id}/encounters`)
         .then((response) => {
             this.filterLocationByVersion(response.data);
         }).catch(error => { throw(error) });
