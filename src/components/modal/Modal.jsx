@@ -23,7 +23,9 @@ class Modal extends Component {
     }
     
     render() {
+        const ROOT = document.getElementsByTagName("body");
         if (this.props.isOpen) {
+            ROOT[0].style.overflow = "hidden";
             return (
                 <div
                     id="modal"
@@ -40,6 +42,7 @@ class Modal extends Component {
                 </div>
             );
         } else {
+            ROOT[0].style.overflow = "scroll"
             return "";
         }
         
