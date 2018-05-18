@@ -48,7 +48,10 @@ class CardContainer extends Component {
         if (this.state.isLoaded) {
             return (
                 <div className="card__item">
-                    <CardAvatar pokemon={pokemon} />
+                    <CardAvatar
+                        pokemon={pokemon}
+                        handleCloseCard={this.props.handleCloseCard}
+                    />
                     <CardDescription
                         pokemon={pokemon}
                         toggleSectionList={this.toggleSectionList}

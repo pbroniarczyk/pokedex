@@ -33,7 +33,10 @@ class Modal extends Component {
                     onClick={(e) => { this.closeModalOutside(e, "modal") }}
                 >
                     <div className="modal__content">
-                        <CardContainer pokemon={this.props.pokemon} />
+                        <CardContainer
+                            pokemon={this.props.pokemon}
+                            handleCloseCard={this.props.handleCloseCard}
+                        />
                         <button
                             className="modal__close"
                             onClick={this.props.handleCloseCard}

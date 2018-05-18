@@ -206,9 +206,26 @@
         padding-top: 20px;
     }
 
+    /* card__title-wrapper is visible only on mobile device */
+    .card__title-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 15px;
+    }
+    .card__return {
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        height: 27px;
+    }
+    .card__title {
+        width: 100%;
+        margin: 0;
+    }
+
     .modal__content .modal__close {
-        right: 5px;
-        top: 0px;
+        display: none;
     }
 
     .item__title {
