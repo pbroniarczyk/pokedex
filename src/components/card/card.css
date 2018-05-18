@@ -37,10 +37,8 @@
 }
 
 .card__panel-list {
-    height: 100%;
+    height: calc(100% - 32px);
     overflow-y: scroll;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
 }
 
 .desc__wrapper {
@@ -157,6 +155,9 @@
 .moves-list__item {
     cursor: pointer;
 }
+.moves-list__item:last-of-type {
+    margin-bottom: 0;
+}
 
 
 /* ====== LOCATIONS ====== */
@@ -194,6 +195,7 @@
 @media screen and (max-width: 678px) {
     .card__item {
         flex-direction: column;
+        overflow-y: scroll;
     }
 
     .card__section {
@@ -233,11 +235,11 @@
     }
 }
 
-@media screen and (max-height: 823px) {
+/* @media screen and (max-height: 823px) {
     .card__item {
         overflow-y: scroll;
     }
-}
+} */
 
 @media screen and (max-width: 500px) {
     .card__avatar {
