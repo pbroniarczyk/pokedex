@@ -1,78 +1,70 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// Components
 import Loader from "../loader/Loader.jsx";
-import CardAvatar from "./CardAvatart.jsx";
-import CardDescription from "./CardDescription.jsx";
-import CardMoves from "./CardMoves.jsx";
-import CardLocations from "./CardLocations.jsx";
+import CardAvatar from "./items/CardAvatart.jsx";
+import CardDescription from "./items/CardDescription.jsx";
+import CardMoves from "./items/CardMoves.jsx";
+import CardLocations from "./items/CardLocations.jsx";
 
-// Assets
-import "./card.css"
+import "./card.css";
 
-let pokemon = {};
+const CardContainer = ({ handleCloseCard, pokemonName }) => {
+  const [currentPokemon, setCurrentPokemon] = useState({});
+  const [isLoaded, setLoader] = useState(false);
+  const [sections, setSections] = useState({
+    isMovesSectionOpen: false,
+    isLocationsSectionOpen: false,
+  });
 
+  useEffect(() => {
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+      .then((response) => {
+        setCurrentPokemon(response.data);
+        setLoader(true);
+      })
+      .catch((error) => {
+        throw error;
+      });
+  }, []);
 
-class CardContainer extends Component {
-    constructor() {
-        super();
-        this.state = {
-            pokemon: {},
-            isLoaded: false,
-            sectionMovesPulled: false,
-            sectionLocationsPulled: false
-        }
+  const toggleSectionList = (panel) => {
+    setSections((prevState) => ({
+      ...prevState,
+      [panel]: !prevState[panel],
+    }));
+  };
 
-        this.toggleSectionList = this.toggleSectionList.bind(this);
-    }
+  if (isLoaded) {
+    const { isMovesSectionOpen, isLocationsSectionOpen } = sections;
 
-    toggleSectionList(panel) {
-        this.setState((prevState, props) => ({
-            [panel]: !prevState[panel]
-        }));
-    }
-    
-    componentWillMount() {
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemon}`)
-        .then(response => {
-            pokemon = response.data;
-            this.setState((prevState, props) => ({
-                isLoaded: !prevState.isLoaded
-            }));
-        })
-        .catch(error => { throw(error) })
-    }
+    return (
+      <div className="card__item">
+        <CardAvatar
+          pokemon={currentPokemon}
+          handleCloseCard={handleCloseCard}
+        />
+        <CardDescription
+          pokemon={currentPokemon}
+          toggleSectionList={toggleSectionList}
+        />
+        <CardMoves
+          moves={currentPokemon.moves}
+          sectionPulled={isMovesSectionOpen}
+          toggleSectionList={toggleSectionList}
+        />
+        <CardLocations
+          pokemon={currentPokemon}
+          moves={currentPokemon.moves}
+          sectionPulled={isLocationsSectionOpen}
+          toggleSectionList={toggleSectionList}
+        />
+      </div>
+    );
+  } else {
+    return <Loader />;
+  }
+};
 
-    render() {
-        if (this.state.isLoaded) {
-            return (
-                <div className="card__item">
-                    <CardAvatar
-                        pokemon={pokemon}
-                        handleCloseCard={this.props.handleCloseCard}
-                    />
-                    <CardDescription
-                        pokemon={pokemon}
-                        toggleSectionList={this.toggleSectionList}
-                    />
-                    <CardMoves
-                        moves={pokemon.moves}
-                        sectionPulled={this.state.sectionMovesPulled}
-                        toggleSectionList={this.toggleSectionList}
-                    />
-                    <CardLocations
-                        pokemon={pokemon}
-                        moves={pokemon.moves}
-                        sectionPulled={this.state.sectionLocationsPulled}
-                        toggleSectionList={this.toggleSectionList}
-                    />
-                </div>
-            );
-        } else {
-            return <Loader />
-        }
-    }
-}
-
-export default CardContainer
+export default CardContainer;

@@ -1,17 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-// Assets
-import "./loader.css"
+import "./loader.css";
 
+const Loader = () => {
+  return (
+    <div className="loader">
+      <div className="loader__figure" />
+    </div>
+  );
+};
 
-class Loader extends Component {
-    render() {
-        return (
-            <div className="loader">
-                <div className="loader__figure" />
-            </div>
-        );
-    }
-}
-
-export default Loader
+export default Loader;
