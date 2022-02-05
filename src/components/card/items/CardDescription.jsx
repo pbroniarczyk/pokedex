@@ -40,7 +40,7 @@ const CardContainer = ({ pokemon, toggleSectionList }) => {
         <button
           className="section__link"
           onClick={() => {
-            toggleSectionList("sectionMovesPulled");
+            toggleSectionList("isMovesSectionOpen");
           }}
         >
           {ForwardIcon}
@@ -51,7 +51,7 @@ const CardContainer = ({ pokemon, toggleSectionList }) => {
         <button
           className="section__link"
           onClick={() => {
-            toggleSectionList("sectionLocationsPulled");
+            toggleSectionList("isLocationsSectionOpen");
           }}
         >
           {ForwardIcon}

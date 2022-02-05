@@ -10,15 +10,12 @@ import CardLocations from "./items/CardLocations.jsx";
 import "./card.css";
 
 const CardContainer = ({ handleCloseCard, pokemonName }) => {
-  console.log("POKEMON", pokemonName);
   const [currentPokemon, setCurrentPokemon] = useState({});
   const [isLoaded, setLoader] = useState(false);
   const [sections, setSections] = useState({
     isMovesSectionOpen: false,
     isLocationsSectionOpen: false,
   });
-
-  console.log("current POKEMON", currentPokemon);
 
   useEffect(() => {
     axios
@@ -34,6 +31,7 @@ const CardContainer = ({ handleCloseCard, pokemonName }) => {
 
   const toggleSectionList = (panel) => {
     setSections((prevState) => ({
+      ...prevState,
       [panel]: !prevState[panel],
     }));
   };

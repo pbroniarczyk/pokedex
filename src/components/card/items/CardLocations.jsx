@@ -47,7 +47,7 @@ const CardLocations = ({ pokemon, sectionPulled, toggleSectionList }) => {
         <button
           className="section__link section__link--back"
           onClick={() => {
-            toggleSectionList("sectionLocationsPulled");
+            toggleSectionList("isLocationsSectionOpen");
           }}
         >
           {BackIcon}

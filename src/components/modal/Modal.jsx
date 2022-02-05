@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import CardContainer from "../card/CardContainer.jsx";
 
-// Assets
 import "./modal.css";
 
 const ICON = (
@@ -18,48 +17,32 @@ const ICON = (
   </svg>
 );
 
-class Modal extends Component {
-  constructor() {
-    super();
-    this.closeModalOutside = this.closeModalOutside.bind(this);
-  }
-
-  closeModalOutside(e, modalID) {
+const Modal = ({ handleCloseCard, isOpen, pokemon }) => {
+  const closeModalOutside = (modalId) => (e) => {
     const ID = e.target.getAttribute("id");
-    if (ID === modalID) this.props.handleCloseCard();
-  }
+    if (ID === modalId) handleCloseCard();
+  };
 
-  render() {
-    const ROOT = document.getElementsByTagName("body");
-    if (this.props.isOpen) {
-      ROOT[0].style.overflow = "hidden";
-      return (
-        <div
-          id="modal"
-          className="modal"
-          onClick={(e) => {
-            this.closeModalOutside(e, "modal");
-          }}
-        >
-          <div className="modal__content">
-            <CardContainer
-              pokemonName={this.props.pokemon}
-              handleCloseCard={this.props.handleCloseCard}
-            />
-            <button
-              className="modal__close"
-              onClick={this.props.handleCloseCard}
-            >
-              {ICON}
-            </button>
-          </div>
+  const ROOT = document.getElementsByTagName("body");
+  if (isOpen) {
+    ROOT[0].style.overflow = "hidden";
+    return (
+      <div id="modal" className="modal" onClick={closeModalOutside("modal")}>
+        <div className="modal__content">
+          <CardContainer
+            pokemonName={pokemon}
+            handleCloseCard={handleCloseCard}
+          />
+          <button className="modal__close" onClick={handleCloseCard}>
+            {ICON}
+          </button>
         </div>
-      );
-    } else {
-      ROOT[0].style.overflow = "scroll";
-      return "";
-    }
+      </div>
+    );
+  } else {
+    ROOT[0].style.overflow = "scroll";
+    return "";
   }
-}
+};
 
 export default Modal;

@@ -1,18 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-// Assets
 import "./search.css";
 
+const Search = () => {
+  return (
+    <div className="search">
+      <h2 className="search__title">PokeSearch</h2>
+      <input type="text" className="search__input" />
+    </div>
+  );
+};
 
-class Search extends Component {
-    render() {
-        return (
-            <div className="search">
-                <h2 className="search__title">PokeSearch</h2>
-                <input type="text" className="search__input"/>
-            </div>
-        );
-    }
-}
-
-export default Search
+export default Search;

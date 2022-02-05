@@ -2,19 +2,14 @@ import React from "react";
 
 import "../card.css";
 
-const LocationItem = () => {
+const LocationItem = ({ location, version }) => {
   return (
     <div className="desc__section moves-list__item locations-list__item ">
-      <div
-        className="item__title"
-        // onClick={(e) => { this.props.expandMove(e, this.props.move, this.props.index) }}
-      >
-        {this.props.location}
-      </div>
+      <div className="item__title">{location}</div>
       <div className="item__details">
         <div className="item__version">
           <span className="version__title">ver. </span>
-          {this.props.version.map((element, index) => {
+          {version.map((element, index) => {
             if (element.version.name === "red") {
               return (
                 <span
