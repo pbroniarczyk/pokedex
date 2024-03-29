@@ -2,7 +2,9 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 
 console.log("CONNECTION ---- ", process.env.DATABASE);
 
-const uri = process.env.DATABASE;
+const uri =
+  process.env.DATABASE ||
+  "mongodb+srv://shenloc:GAxadKvV2I2NqRWt@pokedex-cluster.alwr34p.mongodb.net/?retryWrites=true&w=majority&appName=pokedex-cluster";
 
 const client = new MongoClient(uri, {
   serverApi: {
