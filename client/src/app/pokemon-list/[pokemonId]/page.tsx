@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import type { IPokemon } from "@/core/IPokemon";
 
@@ -18,12 +19,31 @@ const page = async ({
   params: { pokemonId: string };
 }) => {
   const pokemonDetailsData: IPokemon = await getPokemonDetails(pokemonId);
-
+  console.log("pokemonDetailsData", pokemonDetailsData);
   return (
     <div className="pokemon-details-page">
-      <h2>pokemon-details</h2>
       <Link href="/pokemon-list">powrót</Link>
-      <h1>{pokemonDetailsData.name}</h1>
+
+      <div className="pokemon-details-page__content flex">
+        <Image
+          alt={pokemonDetailsData.name}
+          src={pokemonDetailsData.image}
+          width={200}
+          height={200}
+          priority
+        />
+
+        <aside>
+          <h1>{pokemonDetailsData.name}</h1>
+          <div className="flex gap-4">
+            {pokemonDetailsData.type.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+
+          <p>{pokemonDetailsData.description}</p>
+        </aside>
+      </div>
     </div>
   );
 };

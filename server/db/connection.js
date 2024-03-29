@@ -1,10 +1,6 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-console.log("CONNECTION ---- ", process.env.DATABASE);
-
-const uri =
-  process.env.DATABASE ||
-  "mongodb+srv://shenloc:GAxadKvV2I2NqRWt@pokedex-cluster.alwr34p.mongodb.net/?retryWrites=true&w=majority&appName=pokedex-cluster";
+const uri = process.env.DATABASE;
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -17,7 +13,7 @@ const client = new MongoClient(uri, {
 try {
   await client.connect();
   await client.db("poke_data").command({ ping: 1 });
-  console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  console.log("You successfully connected to MongoDB!");
 } catch (error) {
   console.error(error);
 }
