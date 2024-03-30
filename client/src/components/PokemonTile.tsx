@@ -10,11 +10,11 @@ type Props = {
 
 const PokemonTile: FC<Props> = ({ pokemon }) => {
   return (
-    <Link href={`/pokemon-list/${pokemon._id}`}>
+    <Link href={`/pokemon-list/${pokemon.id}`}>
       <div className="pokemon-tile p-10 w-full max-w-40 border border-slate-500 rounded-md">
         <Image
           className="object-contain"
-          src={pokemon.image}
+          src={pokemon.image.thumbnail}
           alt={pokemon.name}
           width={50}
           height={50}

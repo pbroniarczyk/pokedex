@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "archives.bulbagarden.net",
+        hostname: "raw.githubusercontent.com",
         port: "",
       },
     ],

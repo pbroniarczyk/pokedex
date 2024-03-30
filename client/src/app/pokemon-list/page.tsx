@@ -22,9 +22,9 @@ const page = async () => {
       <h2>PokeList</h2>
       <Link href="/">powrót</Link>
       <hr className="my-4" />
-      <section className="mt-10 flex justify-start gap-4 flex-wrap">
+      <section className="mt-10 flex justify-center gap-4 flex-wrap">
         {pokemonListData.map((pokemon) => (
-          <PokemonTile key={pokemon._id} pokemon={pokemon} />
+          <PokemonTile key={pokemon.id} pokemon={pokemon} />
         ))}
       </section>
     </div>

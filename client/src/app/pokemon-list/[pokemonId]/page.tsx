@@ -13,13 +13,9 @@ const getPokemonDetails = async (pokemonId: string) => {
   return res.json();
 };
 
-const page = async ({
-  params: { pokemonId },
-}: {
-  params: { pokemonId: string };
-}) => {
+const page = async ({ params: { pokemonId } }: { params: { pokemonId: string } }) => {
   const pokemonDetailsData: IPokemon = await getPokemonDetails(pokemonId);
-  console.log("pokemonDetailsData", pokemonDetailsData);
+
   return (
     <div className="pokemon-details-page">
       <Link href="/pokemon-list">powrót</Link>
@@ -27,7 +23,7 @@ const page = async ({
       <div className="pokemon-details-page__content flex">
         <Image
           alt={pokemonDetailsData.name}
-          src={pokemonDetailsData.image}
+          src={pokemonDetailsData.image.splash}
           width={200}
           height={200}
           priority

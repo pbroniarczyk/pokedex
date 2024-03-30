@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import "dotenv/config";
 
-import pokemonRouter from "./routes/pokemon.js";
+import pokemonRouter from "./routes/pokemon";
 
 const PORT = process.env.PORT || 8000;
 const app = express();
