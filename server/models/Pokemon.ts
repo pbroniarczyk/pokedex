@@ -4,6 +4,7 @@ class Pokemon {
   evolution?: { prev?: string[]; next?: string[] };
   image: {
     splash: string;
+    sprite: string;
     thumbnail: string;
   };
   name: string;
@@ -29,9 +30,10 @@ class Pokemon {
     this.evolution = props.evolution;
     this.image = {
       splash: props.image.hires,
+      sprite: props.image.sprite,
       thumbnail: props.image.thumbnail,
     };
-    this.name = props.name[0];
+    this.name = props.name.english;
     this.number = props.id;
     this.profile = {
       height: props.profile.height,

@@ -9,6 +9,7 @@ export interface IPokemonStats {
 
 export interface IPokemonImage {
   splash: string;
+  sprite: string;
   thumbnail: string;
 }
 

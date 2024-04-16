@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,21 +8,21 @@ type Props = {
   pokemon: IPokemon;
 };
 
-const PokemonTile: FC<Props> = ({ pokemon }) => {
-  return (
-    <Link href={`/pokemon-list/${pokemon.id}`}>
-      <div className="pokemon-tile p-10 w-full max-w-40 border border-slate-500 rounded-md">
-        <Image
-          className="object-contain"
-          src={pokemon.image.thumbnail}
-          alt={pokemon.name}
-          width={50}
-          height={50}
-        />
-        <h3>{pokemon.name}</h3>
-      </div>
-    </Link>
-  );
-};
+const PokemonTile: FC<Props> = ({ pokemon }) => (
+  <Link href={`/pokemon-list/${pokemon.id}`}>
+    <div className="pokemon-tile w-40 h-40 rounded-md transition-shadow flex flex-col justify-center items-center hover:shadow-md">
+      <Image
+        className="object-contain"
+        src={pokemon.image.thumbnail}
+        alt={pokemon.name}
+        width={50}
+        height={50}
+        placeholder="blur"
+        blurDataURL={pokemon.image.sprite}
+      />
+      <h3>{pokemon.name}</h3>
+    </div>
+  </Link>
+);
 
 export default PokemonTile;

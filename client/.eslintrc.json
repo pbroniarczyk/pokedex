@@ -1,6 +1,17 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+  "globals": {
+    "React": "readonly"
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"
+      ]
+    }
   ]
 }
