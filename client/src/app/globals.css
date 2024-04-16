@@ -6,8 +6,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #f8b179;
+  --color-white: #ffffff;
+  --color-secondary: #2d3250;
+  --color-secondary-500: #424669;
+  --color-secondary-300: #9aa1ca;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .headline {
+    @apply text-4xl font-bold;
   }
 }

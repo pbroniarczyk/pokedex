@@ -20,8 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={montserrat.className}>
-      <body>
-        <main className="w-full min-h-screen">{children}</main>
+      <body className="text-secondary-300">
+        <main className="w-full min-h-screen bg-secondary">{children}</main>
       </body>
     </html>
   );
