@@ -2,10 +2,10 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import type { IPokemon } from "@/core/IPokemon";
+import type { Pokemon } from "@/core/Pokemon";
 
 type Props = {
-  pokemon: IPokemon;
+  pokemon: Pokemon;
 };
 
 const PokemonTile: FC<Props> = ({ pokemon }) => (

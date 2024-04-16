@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 
-import type { IPokemon } from "@/core/IPokemon";
+import type { Pokemon } from "@/core/Pokemon";
 import getPokemonList from "@/utils/getPokemonList";
 
 import PokemonTile from "@/components/PokemonTile";
 
 const PokemonList = async () => {
-  const pokemonListData: IPokemon[] = await getPokemonList();
+  const pokemonListData: Pokemon[] = await getPokemonList();
 
   return (
     <div className="pokemon-list-page w-full max-w-[1366px] mx-auto flex flex-col items-center justify-start p-3 md:p-10 xl:p-24">

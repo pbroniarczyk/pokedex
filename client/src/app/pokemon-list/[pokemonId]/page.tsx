@@ -2,11 +2,12 @@ import Image from "next/image";
 
 import Navigation from "@/components/Navigation";
 
-import type { IPokemon } from "@/core/IPokemon";
+import type { Pokemon } from "@/core/Pokemon";
 import getPokemonDetails from "@/utils/getPokemonDetails,";
 
 const PokemonDetails = async ({ params: { pokemonId } }: { params: { pokemonId: string } }) => {
-  const pokemonDetailsData: IPokemon = await getPokemonDetails(pokemonId);
+  const pokemonDetailsData: Pokemon = await getPokemonDetails(pokemonId);
+  console.log(pokemonDetailsData);
 
   return (
     <div className="pokemon-details-page py-12 px-5">

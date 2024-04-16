@@ -1,4 +1,4 @@
-export interface IPokemonStats {
+export interface PokemonStats {
   hp: number;
   attack: number;
   defense: number;
@@ -7,31 +7,31 @@ export interface IPokemonStats {
   speed: number;
 }
 
-export interface IPokemonImage {
+export interface PokemonImage {
   splash: string;
   sprite: string;
   thumbnail: string;
 }
 
-export interface IPokemonProfile {
+export interface PokemonProfile {
   height: string;
   weight: string;
 }
 
-export interface IPokemonEvolution {
+export interface PokemonEvolution {
   prev?: string[];
   next?: string[];
 }
 
-export interface IPokemon {
+export interface Pokemon {
   id: string;
   description: string;
-  evolution?: IPokemonEvolution;
-  image: IPokemonImage;
+  evolution?: PokemonEvolution;
+  image: PokemonImage;
   name: string;
   number: number;
-  profile: IPokemonProfile;
+  profile: PokemonProfile;
   species: string;
-  stats: IPokemonStats;
+  stats: PokemonStats;
   type: string[];
 }
