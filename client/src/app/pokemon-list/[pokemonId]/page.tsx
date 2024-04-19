@@ -37,10 +37,14 @@ const PokemonDetails = async ({ params: { pokemonId } }: { params: { pokemonId: 
 
   return (
     <div
-      className={`pokemon-details-page ${typeColorClass} min-h-screen pt-12 px-1 bg-[url(/pokeball-bg.svg)] bg-no-repeat bg-[length:29vh] bg-[right_0.5rem_top_0.5rem]`}
+      className={`pokemon-details-page ${typeColorClass} min-h-screen pt-3 px-1 bg-[url(/pokeball-bg.svg)] bg-no-repeat bg-[length:29vh] bg-[right_0.5rem_top_0.5rem]`}
     >
-      <div className="flex items-center relative px-5">
-        <Navigation className="absolute text-white" icon={<Icons.arrow />} link="/pokemon-list" />
+      <div className="flex items-center relative">
+        <Navigation
+          className="absolute text-white"
+          icon={<Icons.arrow width={48} height={48} />}
+          link="/pokemon-list"
+        />
 
         <h1 className="pokemon-details__name headline text-center text-white mx-auto">
           {pokemonDetailsData.name}
