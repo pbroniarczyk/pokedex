@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import { Icons } from "@/components/Icons";
 
 import type { Pokemon } from "@/core/Pokemon";
 import getPokemonList from "@/utils/getPokemonList";
@@ -11,7 +11,7 @@ const PokemonList = async () => {
 
   return (
     <div className="pokemon-list-page w-full max-w-[1366px] mx-auto flex flex-col items-center justify-start p-3 md:p-10 xl:p-24">
-      <Navigation label="back" link="/" />
+      <Navigation icon={<Icons.arrow />} link="/" />
 
       <h2>PokeList</h2>
 
