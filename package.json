@@ -1,16 +1,30 @@
 {
   "name": "pokedex",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "install:client": "npm install --prefix=client",
-    "install:server": "npm install --prefix=server",
-    "start:client": "npm run dev --prefix=client",
-    "start:server": "npm run start --prefix=server"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "Paweł Broniarczyk",
-  "license": "ISC"
+  "dependencies": {
+    "mongoose": "^8.3.2",
+    "next": "^14.2.2",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.4",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8",
+    "prettier": "3.2.5",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
 }
