@@ -7,7 +7,8 @@ import getPokemonDetails from "@/utils/getPokemonDetails,";
 
 import Navigation from "@/components/Navigation";
 import { Icons } from "@/components/Icons";
-import PokemonStatItem from "@/components/PokemonStatItem";
+import PokemonProfileStatItem from "./components/PokemonProfileStatItem";
+import PokemonStats from "./components/PokemonStats";
 
 const typeVariants: TypeColorVariants = {
   bug: "bg-type-bug",
@@ -50,65 +51,44 @@ const PokemonDetails = async ({ params: { pokemonId } }: { params: { pokemonId: 
         <span className="mr-2 text-white italic text-lg">#{pokemonDetailsData.number}</span>
       </div>
 
-      <div className="splash-card shadow-[inset_0_35px_60px_-15px_rgba(0,0,0,0.3)] py-36 px-5 mt-48 rel relative bg-secondary min-h-screen text-white rounded-t-lg">
-        <div className="pokemon-details  flex flex-col md:flex-row">
-          <Image
-            className="pokemon-details__image absolute -top-36 left-2/4 -translate-x-2/4"
-            alt={pokemonDetailsData.name}
-            src={pokemonDetailsData.image.splash}
-            width={250}
-            height={250}
-            priority
-          />
+      <div className="splash-card flex-col shadow-[inset_0_35px_60px_-15px_rgba(0,0,0,0.3)] py-56 px-5 mt-48 rel relative bg-secondary min-h-screen text-white rounded-t-lg">
+        <div className="splach-card__inner-wrapper max-w-[750px] mx-auto">
+          <div className="pokemon-details flex flex-col md:flex-row md:justify-center">
+            <Image
+              className="pokemon-details__image absolute -top-36 left-2/4 -translate-x-2/4"
+              alt={pokemonDetailsData.name}
+              src={pokemonDetailsData.image.splash}
+              width={250}
+              height={250}
+              priority
+            />
 
-          <div className="pokemon-details__content">
-            <div className="pokemon-details__type-wrapper flex justify-center gap-4 mb-12">
-              {pokemonDetailsData.type.map((item) => (
-                <span
-                  key={item}
-                  className={`${typeVariants[item.toLocaleLowerCase() as keyof TypeColorVariants]} py-1 px-4 rounded-full`}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            <div className="pokemon-details__profile flex justify-center items-center mb-10 gap-3">
-              <div>
-                <p className="flex items-center">
-                  <Icons.ruller className="mr-2 rotate-90" width={20} height={20} />
-                  {pokemonDetailsData.profile.height}
-                </p>
-                <p className="text-[10px] text-center text-secondary-300">HEIGHT</p>
+            <div className="pokemon-details__content">
+              <div className="pokemon-details__type-wrapper flex justify-center gap-4 mb-12">
+                {pokemonDetailsData.type.map((item) => (
+                  <span
+                    key={item}
+                    className={`${typeVariants[item.toLocaleLowerCase() as keyof TypeColorVariants]} py-1 px-4 rounded-full`}
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
 
-              <hr className="rotate-90 h-[1px] w-[40px] bg-white block border-0" />
-
-              <div>
-                <p className="flex items-center">
-                  <Icons.weight className="mr-2" width={20} height={20} />
-                  {pokemonDetailsData.profile.weight}
-                </p>
-                <p className="text-[10px] text-center text-secondary-300">WIDTH</p>
+              <div className="pokemon-details__profile flex justify-center items-center mb-10 gap-3">
+                <PokemonProfileStatItem label="HEIGHT" value={pokemonDetailsData.profile.height} />
+                <hr className="rotate-90 h-[1px] w-[40px] bg-white block border-0" />
+                <PokemonProfileStatItem label="WIDTH" value={pokemonDetailsData.profile.weight} />
               </div>
             </div>
           </div>
-        </div>
 
-        <p className={`pokemon-details__poke-title ${typeColorClass} w-fit px-1`}>
-          {pokemonDetailsData.species}
-        </p>
-        <p className="pokemon-details__desc">{pokemonDetailsData.description}</p>
+          <p className={`pokemon-details__poke-title ${typeColorClass} w-fit px-1`}>
+            {pokemonDetailsData.species}
+          </p>
+          <p className="pokemon-details__desc">{pokemonDetailsData.description}</p>
 
-        <div className="pokemon-details__stats mt-14">
-          <h2 className="mb-5">Base stats</h2>
-
-          <PokemonStatItem label="HP" value={pokemonDetailsData.stats.hp} />
-          <PokemonStatItem label="ATTACK" value={pokemonDetailsData.stats.attack} />
-          <PokemonStatItem label="DEFENSE" value={pokemonDetailsData.stats.defense} />
-          <PokemonStatItem label="SP. ATTACK" value={pokemonDetailsData.stats.spAttack} />
-          <PokemonStatItem label="SP. DEFENSE" value={pokemonDetailsData.stats.spDefense} />
-          <PokemonStatItem label="SPEED" value={pokemonDetailsData.stats.speed} />
+          <PokemonStats stats={pokemonDetailsData.stats} />
         </div>
       </div>
     </div>
